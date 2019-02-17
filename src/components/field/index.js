@@ -18,6 +18,7 @@ import Label from '../label';
 import Affix from '../affix';
 import Helper from '../helper';
 import Counter from '../counter';
+import { FONTS } from '../../../../../src/styling';
 
 import styles from './styles.js';
 
@@ -517,7 +518,7 @@ export default class TextField extends PureComponent {
             {this.renderAffix('prefix', active, focused)}
 
             <TextInput
-              style={[styles.input, inputStyle, inputStyleOverrides]}
+              style={[styles.input, inputStyle, inputStyleOverrides, { fontFamily: FONTS.VOESTALPINE_MEDIUM, fontWeight: (Platform.OS == 'ios') ? "600" : '300' }]}
               selectionColor={tintColor}
 
               {...props}
